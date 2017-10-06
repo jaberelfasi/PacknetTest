@@ -39,3 +39,6 @@ $input2 = array("Jaber", "Ibra", "mom", "dad", "sis", "bro", "littleBro");
 $rand_keys2 = array_rand($input2, 2);
 $purchased_by = $input2[$rand_keys2[0]] . "\n";
 echo $purchased_by;
+
+echo "<br>";
+

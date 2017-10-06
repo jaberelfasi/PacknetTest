@@ -42,7 +42,7 @@ echo "<pre>";
 print_r($sums);
 echo "</pre>";
 
-echo  "years";
+echo "years";
 echo "<pre>";
 print_r($years);
 echo "</pre>";
@@ -50,4 +50,54 @@ echo "</pre>";
 echo "the total amound of money spent per year";
 echo "<pre>";
 print_r($sumMoneys);
+echo "</pre>";
+
+
+echo $albumData[0]['genres'];
+echo "<br>";
+echo $albumData[1]['genres'];
+echo "<br>";
+echo $albumData[2]['genres'];
+echo "<br>";
+echo $albumData[3]['genres'];
+echo "<br>";
+echo $albumData[4]['genres'];
+echo "<br>";
+
+$array = array("rock", "pop", "hiphop", "rap", "techno", "country", "house");
+for ($i = 0; $i < sizeof($array); $i++) {
+    echo $array[$i] . "<br>";
+}
+var_dump($array);
+
+
+$sums_array = array();
+$genres_array = array();
+for ($i = 0; $i < sizeof($array); $i++) {
+    $sum = 0;
+    for ($j = 0; $j < 100; $j++) {
+        //echo $array[$i];
+//        if (preg_match('/$array[$i]/',$albumData[$j]['genres'], $matches_out)) {
+//            echo "found";
+//            $sum=$sum+1;
+//            
+//        } 
+        if (strpos($albumData[$j]['genres'], $array[$i]) !== false) {
+            //echo 'true';
+            //echo "<br>";
+            $sum=$sum+1;
+        }
+    }
+    $sums_array[] = $sum;
+    $genres_array[] = $array[$i];
+}
+
+echo "the total amount of albums per genre";
+echo "<pre>";
+print_r($sums_array);
+echo "</pre>";
+
+echo "genres";
+echo "<pre>";
+print_r($genres_array);
 echo "</pre>";
