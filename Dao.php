@@ -19,6 +19,11 @@ class Dao {
     public function insertMockAlbumData() {
 
         $this->openConnection();
+        
+        $truncateSql = "TRUNCATE TABLE Family_albums";
+        $stmt = $this->connection->prepare($truncateSql);
+        $stmt->execute();
+        
         for ($i = 1; $i < 101; $i++) {
             $input = array("rock", "pop", "hiphop", "rap", "techno", "country", "house");
             $rand_keys = array_rand($input, 3);
