@@ -57,6 +57,16 @@ class Dao {
         $row = $stmt->fetchAll();
         return $row;
     }
+    
+    public function getByFamilyMember() {
+        $this->openConnection();
+        $sql =    "SELECT title, artist, no_tracks, year_issued, genres, purchase_date, cost, purchased_by FROM Family_albums ORDER BY purchased_by";
+        
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll();
+        return $row;
+    }
 
     
 

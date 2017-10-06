@@ -11,6 +11,7 @@ require __Dir__ . '/Dao.php';
 //$db->insertMockAlbumData();
 
 $albumData = $db->getAllData();
+$albumsByFam = $db->getByFamilyMember();
 
 //print_r($albumData);
 //echo $albumData[0]['year_issued'];
@@ -101,3 +102,8 @@ echo "genres";
 echo "<pre>";
 print_r($genres_array);
 echo "</pre>";
+
+
+echo "<pre>";
+print_r($albumsByFam);
+echo "/<pre>";
