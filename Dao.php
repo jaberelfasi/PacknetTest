@@ -47,6 +47,16 @@ class Dao {
             $stmt->execute();
         }
     }
+    
+    public function getAllData() {
+        $this->openConnection();
+        $sql =    "SELECT title, artist, no_tracks, year_issued, genres, purchase_date, cost, purchased_by FROM Family_albums ORDER BY year_issued";
+        
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll();
+        return $row;
+    }
 
     
 
